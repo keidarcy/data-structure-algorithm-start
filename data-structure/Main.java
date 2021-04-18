@@ -273,10 +273,31 @@ public class Main {
 //
 //        System.out.println(Character.MIN_VALUE);
 
-        Map<Integer, String> map = new HashMap<>();
-        map.put(1234, "YZ");
+//        CharFinder finder = new CharFinder();
+//
+//        var ch = finder.findFirstNonRepeatingChar("a green apple");
+//        System.out.println(ch);
+//        CharFinder finder = new CharFinder();
+//        System.out.println(finder.findFirstRepeatedChar("hello hello"));
+
+        HashTable table = new HashTable();
+        table.put(6, "apple");
+        table.put(8, "orange");
+        table.put(11, "peal");
+        table.put(6, "apple+");
+        table.put(3, "peach");
+
+        System.out.println(table.get(3));
 
 
+
+
+//        Set<Integer> set = new HashSet<>();
+//        int [] numbers = { 1, 2, 3, 4, 4, 2, 1};
+//        for (var number: numbers) {
+//            set.add(number);
+//        }
+//        System.out.println(set);
 
     }
 
