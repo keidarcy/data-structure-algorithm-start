@@ -6,6 +6,21 @@ import java.util.*;
 import java.util.Stack;
 
 public class Main {
+//    public static  void reverse(Queue<Integer> queue) {
+//        // add
+//        // remove
+//        // isEmpty
+//        Stack<Integer> stack = new Stack<>();
+//
+//        while (!queue.isEmpty()) {
+//            stack.push(queue.remove());
+//        }
+//
+//        while (!stack.isEmpty()) {
+//            queue.add(stack.pop());
+//        }
+//
+//    }
 
     public static void main(String[] args) {
         // Implicit casting
@@ -280,17 +295,14 @@ public class Main {
 //        CharFinder finder = new CharFinder();
 //        System.out.println(finder.findFirstRepeatedChar("hello hello"));
 
-        HashTable table = new HashTable();
-        table.put(6, "apple");
-        table.put(8, "orange");
-        table.put(11, "peal");
-        table.put(6, "apple+");
-        table.put(3, "peach");
-
-        System.out.println(table.get(3));
-
-
-
+//        HashTable table = new HashTable();
+//        table.put(6, "apple");
+//        table.put(8, "orange");
+//        table.put(11, "peal");
+//        table.put(6, "apple+");
+//        table.put(3, "peach");
+//
+//        System.out.println(table.get(3));
 
 //        Set<Integer> set = new HashSet<>();
 //        int [] numbers = { 1, 2, 3, 4, 4, 2, 1};
@@ -298,22 +310,30 @@ public class Main {
 //            set.add(number);
 //        }
 //        System.out.println(set);
+        Tree tree = new Tree();
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(8);
+        tree.insert(10);
+        tree.insert(5);
+//        tree.traversePreOrder();
+//        tree.traverseInOrder();
+
+        System.out.println(tree.height());
+
+//        System.out.println(tree.find(13));
+
+
 
     }
 
-//    public static  void reverse(Queue<Integer> queue) {
-//        // add
-//        // remove
-//        // isEmpty
-//        Stack<Integer> stack = new Stack<>();
-//
-//        while (!queue.isEmpty()) {
-//            stack.push(queue.remove());
-//        }
-//
-//        while (!stack.isEmpty()) {
-//            queue.add(stack.pop());
-//        }
-//
-//    }
+
+    public static int fun(int n) {
+        if (n == 0) return 1;
+        return n * fun(n-1);
+    }
+
 }
