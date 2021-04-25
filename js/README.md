@@ -141,3 +141,14 @@ useful if you do a lot of *insertions at the beginning of lists* - faster then a
 | Insertion at beginning | O(1)                               | O(n)   |
 | Insertion in Middle    | Search time + O(1)                 | O(n)   |
 | Search elements        | O(n)                               | O(n)   |
+
+## Binary Search Tree
+
+### Traversing Trees
+
+- Breadth First(Level Order)
+
+- Depth First
+  - Pre-order (root, left, right)
+  - In-order (left, root, right)
+  - Post-order (left, right, root)
