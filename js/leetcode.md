@@ -39,3 +39,73 @@ var removeNthFromEnd = function(head, n) {
   return dummy.next;
 };
 ```
+
+## bfs / dfs
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
+#### bfs
+
+```js
+var maxDepth = function(root) {
+ if (root === null) return 0;
+ const queue = [root];
+
+ let depth = 0;
+
+ let node = root
+
+ while (queue.length) {
+
+   let length = queue.length;
+   for (let i = 0; i < length; i++) {
+     node = queue.shift();
+
+     if (node.left) {
+       queue.push(node.left)
+     }
+
+     if (node.right) {
+       queue.push(node.right)
+     }
+
+   }
+   depth++;
+ }
+ return depth;
+}
+```
+### dfs
+
+```js
+var maxDepth = function(root) {
+  if (root === null) return 0;
+
+  let res = 1;
+  let depth = 1;
+
+  const dfs = (node) => {
+    if (node.left === null && node.right === null) {
+      if (depth > res) {
+        res = depth;
+      }
+      return
+    }
+
+    if (node.left) {
+      depth++;
+      dfs(node.left);
+      depth--;
+    }
+
+    if (node.right) {
+      depth++;
+      dfs(node.right);
+      depth--;
+    }
+  }
+
+  dfs(root);
+
+  return res;
+};
+```
