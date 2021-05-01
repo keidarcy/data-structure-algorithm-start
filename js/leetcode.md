@@ -109,3 +109,76 @@ var maxDepth = function(root) {
   return res;
 };
 ```
+## dp
+
+- [Jump Game](https://leetcode.com/problems/jump-game/)
+
+#### dp: up down
+
+```js
+var canJump = function(nums) {
+
+ /** dp: Top Down */
+ const maxLength = nums.length;
+ const dp = Array(maxLength).fill(0);
+ dp[maxLength - 1] = 1;
+
+ const dfs = (position) => {
+   if (dp[position] === 1) {
+     return true;
+   } else if (dp[position] === -1) {
+     return false;
+   }
+
+   const maxJump = Math.min(position + nums[position], maxLength - 1);
+
+   for (let i = position + 1; i <= maxJump; i++) {
+     if (dfs(i)) {
+       dp[position] = 1;
+       return true;
+     }
+   }
+
+   dp[position] = -1;
+   return false;
+ }
+
+ return dfs(0);
+}
+```
+
+#### dp: bottom up
+
+```js
+var canJump = function(nums) {
+  const maxLength = nums.length;
+  const dp = Array(maxLength).fill(0);
+  dp[maxLength - 1] = 1;
+
+  for (let i = maxLength - 2; i >= 0; i--) {
+    const maxJump = Math.min(i + nums[i], maxLength - 1);
+    for (let j = i + 1; j <= maxJump; j++) {
+      if (dp[j] === 1) {
+        dp[i] = 1;
+        break;
+      }
+    }
+  }
+  return dp[0] === 1 ? true: false;
+}
+```
+
+#### greedy
+
+```js
+var canJump = function(nums) {
+  let maxJump = nums.length - 1;
+
+  for (let i = nums.length - 2; i >= 0; i--) {
+    if (i + nums[i] >= maxJump) {
+      maxJump = i
+    }
+  }
+  return maxJump == 0;
+}
+```
