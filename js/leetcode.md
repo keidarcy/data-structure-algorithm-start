@@ -113,7 +113,7 @@ var maxDepth = function(root) {
 
 - [Jump Game](https://leetcode.com/problems/jump-game/)
 
-#### dp: up down
+#### dp: top down
 
 ```js
 var canJump = function(nums) {
